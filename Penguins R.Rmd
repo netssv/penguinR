@@ -1,0 +1,28 @@
+---
+title: "Penguins Plots"
+author: "Rodrigo P. Martel"
+date: "2024-02-27"
+output: html_document
+---
+# Exploration About Penguins
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+
+
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+library(ggplot2)
+library(palmerpenguins)
+# Crear el gráfico con puntos y una línea de suavizado
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  labs(
+    title = "Flipper Length & Body Mass",
+    caption = "Por Rodrigo Martel"
+  )
+
+  ```
+
